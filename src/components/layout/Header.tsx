@@ -6,7 +6,7 @@ import { Switch } from "../ui/switch";
 const Header = () => {
   const {theme,setTheme} = useTheme();
   return (
-    <header className="sticky top-0 z-50  w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-8">
+    <header className="sticky top-0 z-50  w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 px-8">
         <div className="text-xl  text-white-400 h-16  flex items-center justify-between px-4  py-8">
             <Link to={"/"} className="flex items-center ">
              <img src={weatherIcon} alt="weather" className="w-auto h-14" />
