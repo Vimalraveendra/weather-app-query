@@ -14,14 +14,15 @@ const Header = () => {
          
              <div>
               <div className="flex items-center gap-1">
-                  <Sun className="h-6 w-6 text-yellow-500 " />
+                  <Sun className=" text-yellow-500 " />
                   <Switch
                       checked={theme === "dark"}
+                       className="cursor-pointer"
                       onCheckedChange={(checked) =>
                       setTheme(checked ? "dark" : "light")
                       }
                       />
-                  <Moon className="w-6 h-6 text-blue-500 " />
+                  <Moon className=" text-blue-500 " />
               </div>
              </div>
         </div>
