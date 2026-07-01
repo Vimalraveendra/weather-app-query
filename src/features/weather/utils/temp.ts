@@ -1,0 +1,1 @@
+  export const formatTemp = (temp:number)=>`${Math.round(temp)}°`;
