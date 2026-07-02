@@ -9,6 +9,7 @@ import { useCurrentWeatherQuery } from "../queries/useCurrentWeather";
 import CurrentWeatherCard from "../components/CurrentWeatherCard";
 
 import { useNavigate } from "react-router-dom";
+import WeatherDetails from "../components/WeatherDetails"
 
 
 const WeatherDashboard = () => {
@@ -58,6 +59,7 @@ const WeatherDashboard = () => {
        <div className="grid gap-6">
             <div className="flex flex-col xl:flex-row gap-4">
             <CurrentWeatherCard data={currentWeather.data} location={geocodeLocation.data?.[0]}/>
+            <WeatherDetails data={currentWeather.data}/>
             </div>
        </div>
     </div>
