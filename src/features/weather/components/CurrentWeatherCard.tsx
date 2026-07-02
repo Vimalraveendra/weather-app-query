@@ -62,7 +62,7 @@ const CurrentWeatherCard = ({data,location}:CurrentWeatherProps) => {
                                 </div>
                            </div>
                               <div className="flex flex-col items-center justify-center">
-                                <div className="relative flex aspect-square w-full max-w-[180px] items-center justify-center">
+                                <div className="relative flex aspect-square w-full max-w-45 items-center justify-center">
                                       <img src={`https://openweathermap.org/img/wn/${currentWeather.icon}@4x.png`} 
                                       alt={currentWeather.description} 
                                       className="h-full w-full object-contain"
