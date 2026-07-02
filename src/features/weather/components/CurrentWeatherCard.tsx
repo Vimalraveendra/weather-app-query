@@ -3,10 +3,11 @@ import { Card, CardContent } from "../../../components/ui/card"
 import type { WeatherData } from "../types/weather.types"
 import { formatTemp } from "../utils/temp";
 import type { SearchHistoryItem } from "../../../types/global.types"
+import type { GeocodeData } from "../../location/types/location.types";
 
 type CurrentWeatherProps={
     data:WeatherData,
-    location?:SearchHistoryItem
+    location?:GeocodeData| SearchHistoryItem
 }
 
 const CurrentWeatherCard = ({data,location}:CurrentWeatherProps) => {
