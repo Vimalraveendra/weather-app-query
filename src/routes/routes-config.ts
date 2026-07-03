@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../components/layout/Layout";
-import WeatherDashboard from "../features/weather/pages/WeatherDashboard";
+import WeatherDashboardPage from "../pages/WeatherDashboardPage";
 
 const routesConfig = createBrowserRouter([
     {
         path:"/",
         Component:RootLayout,
         children:[
-     { index:true, Component:WeatherDashboard},
+     { index:true, Component:WeatherDashboardPage},
     ]
 }
 ])

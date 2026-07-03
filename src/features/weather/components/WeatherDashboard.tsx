@@ -1,22 +1,27 @@
 import {  List, RefreshCcw } from "lucide-react"
 import { Button } from "../../../components/ui/button"
-import { useGeoLocation } from "../../../hooks/useGeoLocation"
-import WeatherSkeleton from "../components/WeatherSkeleton"
-import WeatherError from "../components/WeatherError"
-import { useReverseGeocodeQuery } from "../../location/queries/useReverseGeocode"
-import { useForecastWeatherQuery } from "../queries/useForecastWeather";
-import { useCurrentWeatherQuery } from "../queries/useCurrentWeather";
-import CurrentWeatherCard from "../components/CurrentWeatherCard";
+import WeatherSkeleton from "./WeatherSkeleton"
+import WeatherError from "./WeatherError"
+import CurrentWeatherCard from "./CurrentWeatherCard";
 
 import { useNavigate } from "react-router-dom";
-import WeatherDetails from "../components/WeatherDetails"
+import WeatherDetails from "./WeatherDetails"
+import { useWeather } from "../hooks/useWeather"
 
 
 const WeatherDashboard = () => {
-    const {isLoading ,coordinates,error,getGeoLocation} = useGeoLocation();
-    const  currentWeather= useCurrentWeatherQuery(coordinates)
-    const forecastWeather = useForecastWeatherQuery(coordinates)
-    const  geocodeLocation= useReverseGeocodeQuery(coordinates);
+    // const {isLoading ,coordinates,error,getGeoLocation} = useGeoLocation();
+    // const  currentWeather= useCurrentWeatherQuery(coordinates)
+    // const forecastWeather = useForecastWeatherQuery(coordinates)
+    // const  geocodeLocation= useReverseGeocodeQuery(coordinates);
+     const {
+    currentWeather,
+    forecastWeather,
+    geocodeLocation,
+    isLoading,
+    error,
+    getGeoLocation,
+  } = useWeather();
     const navigate = useNavigate()
    
     const handleNavigateToFavoriteCities=()=>{
@@ -24,13 +29,9 @@ const WeatherDashboard = () => {
     }
 
     const handleRefresh=()=>{
-       getGeoLocation();
-       if(coordinates){
-        currentWeather.refetch();
-        forecastWeather.refetch();
-        // geocodeLocation.refetch();
-       }
+       getGeoLocation()
     }
+    
     if(isLoading) return <WeatherSkeleton/>
     if(error) return <WeatherError error={error}  getGeoLocation={getGeoLocation}/> ;
     if (!currentWeather.data|| !forecastWeather.data) return <WeatherSkeleton />;
