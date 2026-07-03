@@ -7,14 +7,12 @@ import CurrentWeatherCard from "./CurrentWeatherCard";
 import { useNavigate } from "react-router-dom";
 import WeatherDetails from "./WeatherDetails"
 import { useWeather } from "../hooks/useWeather"
+import HourlyForecast from "./HourlyForecast";
 
 
 const WeatherDashboard = () => {
-    // const {isLoading ,coordinates,error,getGeoLocation} = useGeoLocation();
-    // const  currentWeather= useCurrentWeatherQuery(coordinates)
-    // const forecastWeather = useForecastWeatherQuery(coordinates)
-    // const  geocodeLocation= useReverseGeocodeQuery(coordinates);
-     const {
+
+  const {
     currentWeather,
     forecastWeather,
     geocodeLocation,
@@ -62,6 +60,7 @@ const WeatherDashboard = () => {
             <CurrentWeatherCard data={currentWeather.data} location={geocodeLocation.data?.[0]}/>
             <WeatherDetails data={currentWeather.data}/>
             </div>
+             <HourlyForecast data={forecastWeather.data}/>
        </div>
     </div>
   )
