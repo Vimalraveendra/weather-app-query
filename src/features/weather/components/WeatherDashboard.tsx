@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import WeatherDetails from "./WeatherDetails"
 import { useWeather } from "../hooks/useWeather"
 import HourlyForecast from "./HourlyForecast";
+import { WeatherForecast } from "./WeatherForecast";
 
 
 const WeatherDashboard = () => {
@@ -57,10 +58,15 @@ const WeatherDashboard = () => {
        </div>
        <div className="grid gap-6">
             <div className="flex flex-col xl:flex-row gap-4">
-            <CurrentWeatherCard data={currentWeather.data} location={geocodeLocation.data?.[0]}/>
-            <WeatherDetails data={currentWeather.data}/>
+              <CurrentWeatherCard data={currentWeather.data} location={geocodeLocation.data?.[0]}/>
+              <WeatherDetails data={currentWeather.data}/>
             </div>
              <HourlyForecast data={forecastWeather.data}/>
+             <div className="flex flex-col xl:flex-row gap-4 ">
+              <div className="flex-1">
+                  <WeatherForecast data={forecastWeather.data}/>
+              </div>
+            </div>
        </div>
     </div>
   )
