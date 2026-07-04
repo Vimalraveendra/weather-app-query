@@ -9,11 +9,13 @@ import WeatherDetails from "./WeatherDetails"
 import { useWeather } from "../hooks/useWeather"
 import HourlyForecast from "./HourlyForecast";
 import { WeatherForecast } from "./WeatherForecast";
+import WeatherMap from "./WeatherMap";
 
 
 const WeatherDashboard = () => {
 
   const {
+    coordinates,
     currentWeather,
     forecastWeather,
     geocodeLocation,
@@ -66,6 +68,9 @@ const WeatherDashboard = () => {
               <div className="flex-1">
                   <WeatherForecast data={forecastWeather.data}/>
               </div>
+              <div className="flex-1 min-h-100">
+                 <WeatherMap data={{lat:coordinates!.lat,lon:coordinates!.lon,temp:currentWeather.data.main.temp}}/>
+               </div>
             </div>
        </div>
     </div>
