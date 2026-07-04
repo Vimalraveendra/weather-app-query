@@ -10,6 +10,7 @@ import { useWeather } from "../hooks/useWeather"
 import HourlyForecast from "./HourlyForecast";
 import { WeatherForecast } from "./WeatherForecast";
 import WeatherMap from "./WeatherMap";
+import { CitySearch } from "../../location/components/CitySearch";
 
 
 const WeatherDashboard = () => {
@@ -40,6 +41,7 @@ const WeatherDashboard = () => {
   return (
     <div>
        <div className="flex items-center justify-between p-4">
+           <CitySearch/>
            <div className="flex items-center gap-2">
             <Button
             variant={"outline"}
