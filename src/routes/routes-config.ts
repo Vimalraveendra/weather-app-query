@@ -3,6 +3,7 @@ import RootLayout from "../components/layout/Layout";
 import WeatherDashboardPage from "../pages/WeatherDashboardPage";
 import FavoriteCitiesPage from "../pages/FavoriteCitiesPage";
 import CityWeather from "../features/location/components/CityWeather";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const routesConfig = createBrowserRouter([
     {
@@ -12,7 +13,9 @@ const routesConfig = createBrowserRouter([
      { index:true, Component:WeatherDashboardPage},
      {  path:"/city/:cityName",Component:CityWeather},
      { path:"/favorites", Component:FavoriteCitiesPage },
+     // Catch-all route
+      { path: "*", Component: NotFoundPage },
     ]
-}
+} 
 ])
 export default routesConfig;
