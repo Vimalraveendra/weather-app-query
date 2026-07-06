@@ -52,7 +52,7 @@ const CityWeather = () => {
                   <WeatherForecast data={forecastWeather.data}/>
               </div>
               
-               <div className="flex-1 min-h-[400px]">
+               <div className="flex-1 min-h-100">
                  <WeatherMap data={{lat:coordinates!.lat,lon:coordinates!.lon,temp:currentWeather.data.main.temp}}/>
                </div>
                

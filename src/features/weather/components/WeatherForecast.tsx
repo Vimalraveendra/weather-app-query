@@ -10,7 +10,7 @@ type WeatherForecastProps = {
 export const WeatherForecast = ({data}:WeatherForecastProps) => {
   const dailyForecasts = getDailyForecast(data.list)
   return (
-       <Card className="flex-1 p-4">
+       <Card className="flex-1 p-4 border border-indigo-500/60">
                 <CardHeader className="p-2">
                     <CardTitle className="text-lg">5-Day Forecast</CardTitle>
                 </CardHeader>
