@@ -9,7 +9,7 @@ type HourlyForecastCardProps={
 
 export const HourlyForecastCard = ({hour}:HourlyForecastCardProps) => {
   return (
-        <Card className={"flex-[0_0_auto]  p-4  w-24 rounded-xl shadow border border-blue-600/50 "}>
+        <Card className={"flex-[0_0_auto]  p-4  w-24 rounded-xl shadow border border-indigo-500/60"}>
             <CardContent>
               <div className="w-full flex gap-2 items-center justify-center flex-col">
                   <p>{format(new Date(hour.dt*1000),"ha")}</p>

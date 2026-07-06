@@ -12,7 +12,7 @@ const WeatherDetails = ({data}:WeatherDetailsProps) => {
     const weather ={sunrise,sunset,deg,pressure,visibility,dt}
     const weatherDetails=createWeatherDetails(weather);
   return (
-            <Card className="flex-1 p-6">
+            <Card className="flex-1 p-6 border border-indigo-500/60">
                 <CardHeader  className="text-center">   
                     <CardTitle>Weather Details</CardTitle>
                 </CardHeader>

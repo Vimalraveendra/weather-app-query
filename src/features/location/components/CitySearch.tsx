@@ -29,8 +29,8 @@ export const CitySearch = () => {
         navigate(`/city/${name.trim()}?lat=${lat.trim()}&lon=${lon.trim()}`);
     }
   return (
-    <div className="flex flex-col gap-4 ">
-      <Button onClick={() => setOpen(true)} variant="outline" className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64 border border-indigo-500 rounded-md">
+    <div className="flex flex-col gap-4">
+      <Button onClick={() => setOpen(true)} variant="outline" className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64 border border-indigo-500/60! rounded-md">
         <Search  className="mr-2 h-4 w-4"/>
         Search Cities...
       </Button>

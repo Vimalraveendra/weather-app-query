@@ -1,16 +1,15 @@
-import {  List, RefreshCcw } from "lucide-react"
+import { RefreshCcw } from "lucide-react"
 import { Button } from "../../../components/ui/button"
 import WeatherSkeleton from "./WeatherSkeleton"
 import WeatherError from "./WeatherError"
 import CurrentWeatherCard from "./CurrentWeatherCard";
-
-import { useNavigate } from "react-router-dom";
 import WeatherDetails from "./WeatherDetails"
 import { useWeather } from "../hooks/useWeather"
 import HourlyForecast from "./HourlyForecast";
 import { WeatherForecast } from "./WeatherForecast";
 import WeatherMap from "./WeatherMap";
 import { CitySearch } from "../../location/components/CitySearch";
+import FavoriteCitiesButton from "../../favorites/components/FavoritesCitiesButton";
 
 
 const WeatherDashboard = () => {
@@ -24,12 +23,7 @@ const WeatherDashboard = () => {
     error,
     getGeoLocation,
   } = useWeather();
-    const navigate = useNavigate()
    
-    const handleNavigateToFavoriteCities=()=>{
-      navigate("/favorites")
-    }
-
     const handleRefresh=()=>{
        getGeoLocation()
     }
@@ -43,13 +37,7 @@ const WeatherDashboard = () => {
        <div className="flex items-center justify-between p-4">
            <CitySearch/>
            <div className="flex items-center gap-2">
-            <Button
-            variant={"outline"}
-             size={"icon"} 
-             onClick={handleNavigateToFavoriteCities}
-             >
-            <List className="size-5" />
-            </Button>
+           <FavoriteCitiesButton/>
            <Button
             variant={"outline"}
              size={"icon"} 

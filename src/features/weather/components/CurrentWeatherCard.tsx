@@ -18,7 +18,7 @@ const CurrentWeatherCard = ({data,location}:CurrentWeatherProps) => {
     }= data;
   
   return (
-            <Card className="overflow-hidden flex-none md:flex-2">
+            <Card className="overflow-hidden flex-none md:flex-1 border border-indigo-500/60">
                 <CardContent className="p-6">
                      <div className="grid gap-6 md:grid-cols-2">
                            <div className="space-y-6">
