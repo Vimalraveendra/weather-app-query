@@ -1,75 +1,153 @@
-# React + TypeScript + Vite
+# 🌦️ Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive weather application built with **React**, **TypeScript**, and **Vite** that provides real-time weather information, hourly forecasts, 5-day forecasts, interactive maps, and location-based weather data.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-Latest-purple?logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?logo=tailwind-css)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌍 Real-time weather data
+- 📍 Automatic geolocation support
+- 🔎 Search weather by city name
+- 🕒 Hourly weather forecast
+- 📅 5-day weather forecast
+- 🌡️ Detailed weather metrics
+  - Temperature
+  - Feels Like
+  - Humidity
+  - Wind Speed
+  - Pressure
+  - Visibility
+  - Sunrise & Sunset
+- 🗺️ Interactive weather maps using Leaflet
+- ⭐ Save favorite cities
+- 🕘 Recent search history
+- 📱 Fully responsive design
+- 🌙 Modern and clean UI
+- ⚡ Fast loading with React Query caching
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- Vite
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### UI
 
+- Tailwind CSS
+- shadcn/ui
+- Lucide React
+
+### Data Fetching
+
+- React Query (TanStack Query)
+
+### Maps
+
+- React Leaflet
+- Leaflet
+
+### Testing
+
+- Vitest
+- React Testing Library
+- MSW (Mock Service Worker)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+VITE_WEATHER_API_KEY=your_api_key
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ▶️ Running the Development Server
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
+```
+
+Visit:
 
 ```
+http://localhost:5173
+```
+
+---
+
+## 🧪 Running Tests
+
+Run all tests
+
+```bash
+npm test
+```
+
+Run Vitest
+
+```bash
+npm run test
+```
+
+Run with coverage
+
+```bash
+npm run test:coverage
+```
+
+---
+
+## 📦 Main Dependencies
+
+- React
+- TypeScript
+- Vite
+- TanStack React Query
+- React Leaflet
+- Tailwind CSS
+- shadcn/ui
+- Axios
+- Lucide React
+
+---
+
+## 🧪 Testing
+
+This project includes a comprehensive testing setup with:
+
+- ✅ Unit Tests
+- ✅ Component Tests
+- ✅ API Mocking with MSW
+- ✅ User interaction testing
+- ✅ React Testing Library best practices
+
+---
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
