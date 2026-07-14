@@ -1,8 +1,9 @@
 import { http, HttpResponse } from 'msw'
 import { mockGeocodeData } from './fixtures/geocode';
+import { API_CONFIG } from '../lib/api/config';
 
 export const geocodeHandlers = {
-  success: http.get("/reverse", ({ request }) => {
+  success: http.get(`${API_CONFIG.GEO_URL}/reverse`, ({ request }) => {
     const url = new URL(request.url);
     const lat = url.searchParams.get("lat");
     const lon = url.searchParams.get("lon");
@@ -14,7 +15,7 @@ export const geocodeHandlers = {
     return HttpResponse.json(mockGeocodeData);
   }),
 
-  failure: http.get("/reverse", () => {
+  failure: http.get(`${API_CONFIG.GEO_URL}/reverse`, () => {
     return HttpResponse.json(
       { message: "Failed to fetch geocode" },
       { status: 500 }
