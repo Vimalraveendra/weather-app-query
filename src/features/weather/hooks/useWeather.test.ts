@@ -141,3 +141,25 @@ describe('current weather', () => {
    })
     
  })
+
+   describe('forecast weather', () => { 
+    test("returns loading state when forecast weather is loading", () => { 
+        setupDefaultMocks({forecastLoading:true})
+       const { result } = renderHook(() => useWeather());
+       expect(result.current.isLoading).toBe(true);
+  })
+
+     test("returns forecast weather data when request succeeds",()=>{
+           const mockData =[{ temperature: 21 }]
+           setupDefaultMocks({coordinates,forecastData:mockData})
+          const { result } = renderHook(() => useWeather());
+          expect(result.current.forecastWeather.data).toEqual(mockData);
+           expect(useForecastWeatherQuery).toHaveBeenCalledWith(coordinates);
+    })  
+
+    test('returns an error when forecast weather request fails', () => { 
+        setupDefaultMocks({forecastError:new Error("Failed to fetch forecast weather data")})
+        const { result } = renderHook(() => useWeather());
+       expect(result.current.error).toBe("Failed to fetch forecast weather data");
+   })  
+ })
