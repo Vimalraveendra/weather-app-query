@@ -119,3 +119,25 @@ test("returns coordinates when geolocation succeeds",()=>{
    })
 
 })
+
+describe('current weather', () => { 
+    test("returns loading state when current weather is loading", () => { 
+        setupDefaultMocks({currentLoading:true})
+        const { result } = renderHook(() => useWeather());
+       expect(result.current.isLoading).toBe(true);
+  })
+      test("returns current weather data when request succeeds",()=>{
+       const mockData ={ temperature: 20 }
+       setupDefaultMocks({coordinates,currentData:mockData})
+       const { result } = renderHook(() => useWeather());
+       expect(result.current.currentWeather.data).toEqual(mockData);
+        expect(useCurrentWeatherQuery).toHaveBeenCalledWith(coordinates);
+    })  
+
+    test('returns an error when current weather request fails', () => { 
+        setupDefaultMocks({currentError:new Error("Failed to fetch current weather data")})
+        const { result } = renderHook(() => useWeather());
+       expect(result.current.error).toBe("Failed to fetch current weather data");
+   })
+    
+ })
